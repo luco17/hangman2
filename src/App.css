@@ -1,0 +1,18 @@
+body {
+  background-color: #34495e;
+  color: #fff;
+  max-width: 800px;
+}
+
+.figure-container {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+
+#mask {
+  font-size: 250%;
+  letter-spacing: 0.3em;
+  text-align: center;
+}
