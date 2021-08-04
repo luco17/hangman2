@@ -14,27 +14,31 @@ const rapper = getRapper();
 
 function App() {
 
-  const [guesses, setGuesses] = useState([]);
+  const [guesses, setGuesses] = useState(new Set());
   const [nWrong, setNWrong] = useState(0);
 
   const rapperLower = rapper.toLowerCase();
 
   const handleGuess = (e) => {
     const guess = e.target.innerHTML;
-    setGuesses((prev) => [...prev, guess.toLowerCase()]);
-    
+    setGuesses((prev) => new Set([...prev, guess.toLowerCase()]));
   }
 
+  
   console.log(guesses);
   console.log(rapperLower);
-
+  
+  if (guesses.has("e")) {
+    console.log("popper");
+  }
+  
   return(
     <div id="game">
       <h1>{gameTitle}</h1>
       <Figure />
       <h2>{rapper}</h2>
       <Mask rapper={rapper} />
-      <Keys handleGuess={handleGuess}/>
+      <Keys handleGuess={handleGuess} guesses={guesses}/>
     </div>
   )
 }
