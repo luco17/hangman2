@@ -26,18 +26,16 @@ function App() {
 
   
   console.log(guesses);
-  console.log(rapperLower);
   
-  if (guesses.has("e")) {
-    console.log("popper");
-  }
-  
+  const trial = rapperLower.split("");
+  const trial2 = rapper.split("");
+
   return(
     <div id="game">
       <h1>{gameTitle}</h1>
       <Figure />
       <h2>{rapper}</h2>
-      <Mask rapper={rapper} />
+      <Mask rapper={rapper} guesses={guesses} />
       <Keys handleGuess={handleGuess} guesses={guesses}/>
     </div>
   )
