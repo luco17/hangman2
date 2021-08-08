@@ -24,7 +24,7 @@ function App() {
   
   const handleGuess = (e) => {
     const guess = e.target.innerHTML;
-    setGuesses((prev) => new Set([...prev, guess.toLowerCase()]));
+    setGuesses((prev) => new Set([...prev, guess]));
     handleWrong(guess);
   }
   
@@ -38,7 +38,7 @@ function App() {
       
       <h1>{gameTitle}</h1>
       <Figure nWrong={nWrong} />
-      <h2>{rapper}</h2>
+      {/* <h2>{rapper}</h2> */}
       <h3>Number of guesses remaining: {6 - nWrong}</h3>
       <Mask rapper={rapper} guesses={guesses} />
       <StateBanner 
@@ -49,6 +49,7 @@ function App() {
         winChecker={winChecker}
         handleGuess={handleGuess}
       />
+
     </div>
   )
 }

@@ -11,15 +11,15 @@ const StateBanner = ({winningWord, guesses, nWrong, rapper, handleGuess, winChec
       case "lose": 
         return (
           <div>
-            <h2>{`You lost! The rapper was ${rapper}`}</h2>
-            <button onClick={gameReset}>New Game</button>
+            <h3>{`You lost! The rapper was ${rapper}`}</h3>
+            <button className="game-reset" onClick={gameReset}>New Game</button>
           </div>
         );
       case "win":
         return (
           <div>
-            <h2>{`Congratulations, you won!`}</h2>
-            <button onClick={gameReset}>New Game</button>
+            <h3>{`Congratulations, you won!`}</h3>
+            <button className="game-reset" onClick={gameReset}>New Game</button>
           </div>
         );
       default:

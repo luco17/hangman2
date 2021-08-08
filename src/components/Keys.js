@@ -4,7 +4,7 @@ const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
 const Keys = ({ handleGuess, guesses }) => {
     return (
-        <div>
+        <div className='hangman-btns'>
             { alphabet.map( (letter, key) => {
                 return(
                     <button 
@@ -13,7 +13,7 @@ const Keys = ({ handleGuess, guesses }) => {
                         onClick={handleGuess}
                         disabled={guesses.has(letter)}
                     >
-                        { letter.toUpperCase() }
+                        { letter }
                     </button>
                 )
             })}
