@@ -1,5 +1,5 @@
 export function winChecker(word, guesses, nWrong) {
-    let status = "You win";  
+    let status = "win";  
     
     word.forEach(ltr => {
       if (!guesses.has(ltr)) {
@@ -7,7 +7,11 @@ export function winChecker(word, guesses, nWrong) {
       }
     });
     
-    if (nWrong === 6) status = "You lose!";
+    if (nWrong === 6) status = "lose";
 
     return status;
   } 
+
+export function gameReset() {
+  window.location.reload();
+}

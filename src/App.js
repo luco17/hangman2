@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Figure from './components/Figure';
 import Mask from './components/Mask';
-import Keys from './components/Keys';
+import StateBanner from './components/StateBanner';
 
 import { getRapper } from './rappers';
 import { winChecker } from './helpers/helpers';
@@ -33,35 +33,21 @@ function App() {
     return rapperLower.includes(guessLCase) ? 0 : setNWrong(nWrong + 1)
   }
 
-  function StateBanner({winningWord, guesses, nWrong, rapper}) {
-    const status = winChecker(winningWord, guesses, nWrong);
-
-    if (status !== "") {
-      return (
-        <div>
-          <h2>{status}</h2>
-          <h3>{`the rapper was ${rapper}`}</h3>
-          <button onClick={gameReset}>New Game</button>
-        </div>
-      );
-    } return <Keys handleGuess={handleGuess} guesses={guesses}/>
-  }
-
-  function gameReset() {
-    window.location.reload();
-  }
-
   return(
     <div id="game">
       
       <h1>{gameTitle}</h1>
       <Figure nWrong={nWrong} />
+      <h2>{rapper}</h2>
+      <h3>Number of guesses remaining: {6 - nWrong}</h3>
       <Mask rapper={rapper} guesses={guesses} />
       <StateBanner 
         winningWord={winningWord} 
         guesses={guesses} 
         nWrong={nWrong}
         rapper={rapper}
+        winChecker={winChecker}
+        handleGuess={handleGuess}
       />
     </div>
   )
