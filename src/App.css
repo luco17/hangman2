@@ -67,3 +67,7 @@ body {
   border-color: #f6b93b;
   transition: all 0.4s ease 0s;
 }
+
+footer {
+  margin-top: 2em;
+}
