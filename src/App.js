@@ -57,7 +57,7 @@ function App() {
 
       <div id="game">
         <footer>
-          <a href="https://github.com/luco17/hangman2" target="_blank">
+          <a href="https://github.com/luco17/hangman2" target="_blank" rel="noreferrer">
             <img src={githubLogo} alt="sharing logo" />
           </a>
         </footer>
