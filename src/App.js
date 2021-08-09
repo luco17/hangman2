@@ -37,6 +37,7 @@ function App() {
     <div id="game">
       
       <h1>{gameTitle}</h1>
+      <h2>Guess the rapper</h2>
       <Figure nWrong={nWrong} />
       {/* <h2>{rapper}</h2> */}
       <h3>Number of guesses remaining: {6 - nWrong}</h3>
